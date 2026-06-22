@@ -78,6 +78,8 @@ CASE_NAME=ibm-cp-common-services
 CASE_VERSION=4.6.11
 ```
 
+*Pre upgrade*
+
 Download case files, generate manifests, and mirror images for the target APIC version and CS version.<br/>
 
 ```
@@ -94,8 +96,15 @@ Download case files, generate manifests, and mirror images for the target APIC v
 4-oc-image-mirror.sh cs-case.env
 ```
 
-Apply catalog sources.<br/>
+*Pre-upgrade*
+Check subsystems health<br/>
+Backup subsystems</br/>
+
+*Upgrade*
+Upgrade operators
 ```
 6-apply-catalog-sources.sh apic-case.env
 6-apply-catalog-sources.sh cs-case.env
 ```
+
+*Upgrade subsystem CRs*.<br/>
