@@ -96,7 +96,7 @@ Download case files, generate manifests, and mirror images for the target APIC v
 4-oc-image-mirror.sh cs-case.env
 ```
 
-*Pre-upgrade*
+*Pre-upgrade*<br/>
 Check subsystems health<br/>
 Backup subsystems</br/>
 
