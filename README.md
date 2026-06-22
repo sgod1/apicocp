@@ -38,18 +38,3 @@ Generate mirror manifests.
 ```
 
 If you have proxy docker registry for *cp.icr.io*, you do not need to mirror images.<br/>
-
-Mirror *cp.icr.io* images to private registry.
-```
-4-oc-image-mirror.sh ./apic-case.env
-```
-
-Apply image digest mirror set
-```
-5-apply-image-digest-mirror-set.sh
-```
-
-Apply catalog sources
-```
-6-apply-catalog-sources.sh
-```
