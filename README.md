@@ -78,6 +78,24 @@ CASE_NAME=ibm-cp-common-services
 CASE_VERSION=4.6.11
 ```
 
+*Common Services*<br/>
+
+*Common Services* version depends on OpenShift version.<br/>
+```
+https://www.ibm.com/docs/en/cloud-paks/foundational-services/4.6.0?topic=installer-supported-openshift-kubernetes-versions
+```
+For example, the earliest CS verison for OpenShift 4.18 is 4.6.11<br/>
+
+*CommonServices* case reference:<br/>
+```
+https://ibm.github.io/cloud-pak/assets/html/ibm-cp-common-services-table.html
+```
+
+*Foundational Services Support Cycle 2*<br/>
+```
+https://www.ibm.com/docs/en/cloud-paks/foundational-services/4.6.0
+```
+
 *Pre upgrade*
 
 Download case files, generate manifests, and mirror images for the target APIC version and CS version.<br/>
