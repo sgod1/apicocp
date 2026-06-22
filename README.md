@@ -115,8 +115,31 @@ Download case files, generate manifests, and mirror images for the target APIC v
 ```
 
 *Pre-upgrade*<br/>
-Check subsystems health<br/>
-Backup subsystems</br/>
+Check subsystems health, verify each subsystem status *RUNNING*
+```
+oc project apic
+oc get ManagementCluster 
+oc get GatewayCluster
+oc get PortalCluster
+oc get AnalyticsCluster
+```
+
+Backup API Manager and LUR databases.<br/>
+```
+u0-backup-api-mgr-db.sh
+```
+
+apicops subsys check
+```
+u0-apicops-subsys-check.sh management
+u0-apicops-subsys-check.sh portal
+u0-apicops-subsys-check.sh analytics
+```
+
+Backup API Connect deployment.<br/>
+```
+https://www.ibm.com/docs/en/api-connect/software/10.0.8_lts?topic=connect-backing-up-restoring-disaster-recovery
+```
 
 *Upgrade*
 Upgrade operators
@@ -125,4 +148,21 @@ Upgrade operators
 6-apply-catalog-sources.sh cs-case.env
 ```
 
-*Upgrade subsystem CRs*.<br/>
+Upgrade channels in the following sequence:<br/>
+```
+datapower
+api connect
+foundational services
+```
+
+Use OpenShuft to upgrade operator subscription channels.<br/>
+
+Check subsystems.<br/>
+
+*Update subsystem CRs*.<br/>
+```
+spec.version: 10.0.8.9
+```
+
+Update deprecated deployment profiles.<br/>
+

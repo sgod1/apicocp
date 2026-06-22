@@ -2,6 +2,8 @@
 
 export PATH=.:bin:$PATH
 
+subsys=${1:-"management"}
+
 set -x
 
-apicops system:pre-upgrade-check management
+apicops system:pre-upgrade-check $subsys
